@@ -1,0 +1,45 @@
+/// Route names for the application
+class RouteNames {
+  RouteNames._();
+
+  // Onboarding
+  static const String onboarding = '/onboarding';
+  static const String welcome = '/';
+
+  // Auth
+  static const String landing = '/landing';
+  static const String createAccount = '/create-account';
+  static const String usernameAvatar = '/username-avatar';
+
+  // Main Navigation
+  static const String main = '/main';
+
+  // Home
+  static const String home = '/main/home';
+
+  // My Offers
+  static const String myOffers = '/main/my-offers';
+
+  // Cashout
+  static const String cashout = '/main/cashout';
+  static const String withdrawFunds = '/main/cashout/withdraw';
+
+  // Profile
+  static const String profile = '/main/profile';
+  static const String editProfile = '/main/profile/edit';
+  static const String settings = '/main/profile/settings';
+  static const String statistics = '/main/profile/statistics';
+  static const String referrals = '/main/profile/referrals';
+  static const String rewards = '/main/profile/rewards';
+  static const String leaderboard = '/main/profile/leaderboard';
+
+  // Offer Details
+  static const String offerDetails = '/offer-details';
+  static const String allOffers = '/all-offers';
+  static const String allTopGames = '/all-top-games';
+
+  // Support
+  static const String support = '/support';
+  static const String privacyPolicy = '/privacy-policy';
+  static const String termsOfService = '/terms-of-service';
+}
