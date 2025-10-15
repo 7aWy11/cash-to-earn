@@ -23,27 +23,8 @@ Future<void> init() async {
   // Cubit
   // sl.registerFactory(() => SplashCubit());
 
-  // =========================================================================
-  // Features - Onboarding
-  // =========================================================================
-
-  // Cubit
-  // sl.registerFactory(() => OnboardingCubit(sl()));
-
-  // Use Cases
-  // sl.registerLazySingleton(() => GetOnboardingStatus(sl()));
-  // sl.registerLazySingleton(() => CompleteOnboarding(sl()));
-
-  // Repository
-  // sl.registerLazySingleton<OnboardingRepository>(
-  //   () => OnboardingRepositoryImpl(localDataSource: sl()),
-  // );
-
-  // Data Sources
-  // sl.registerLazySingleton<OnboardingLocalDataSource>(
-  //   () => OnboardingLocalDataSourceImpl(),
-  // );
-
+  
+  
   // =========================================================================
   // Features - Auth
   // =========================================================================

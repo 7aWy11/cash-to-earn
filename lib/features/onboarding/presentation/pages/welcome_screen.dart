@@ -210,7 +210,11 @@ class WelcomeScreen extends StatelessWidget {
             shape: BoxShape.circle,
             border: Border.all(color: AppColors.primaryPurple, width: 2),
           ),
-          child: Icon(Icons.check, color: AppColors.primaryPurple, size: 16.sp),
+          child: Icon(
+            Icons.check,
+            color: AppColors.primaryPurple.withValues(alpha: 0.5),
+            size: 16.sp,
+          ),
         ),
         SizedBox(width: 12.w),
         Expanded(

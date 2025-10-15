@@ -17,7 +17,7 @@ class CreateAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(elevation: 0, title: 'Create Account'),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -185,6 +185,8 @@ class CreateAccountScreen extends StatelessWidget {
                     text: 'Create My Account',
                     onPressed: () => showPersonalizationDialog(context),
                     width: double.infinity,
+                    backgroundColor: AppColors.white,
+                    textColor: AppColors.primaryPurple,
                   ),
 
                   SizedBox(height: 16.h),

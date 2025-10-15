@@ -185,7 +185,9 @@ class LandingScreen extends StatelessWidget {
       width: isActive ? 24.w : 8.w,
       height: 8.h,
       decoration: BoxDecoration(
-        color: isActive ? AppColors.white : AppColors.white.withOpacity(0.3),
+        color: isActive
+            ? AppColors.white
+            : AppColors.white.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(4.r),
       ),
     );
