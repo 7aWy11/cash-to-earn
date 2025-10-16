@@ -21,13 +21,13 @@ class DialogProgressIndicator extends StatelessWidget {
         Text(
           'Question $currentStep of $totalSteps',
           style: AppTextStyles.bodySmall.copyWith(
-            color: AppColors.white.withOpacity(0.7),
+            color: AppColors.white.withValues(alpha: 0.7),
           ),
         ),
         SizedBox(height: 16.h),
         LinearProgressIndicator(
           value: currentStep / totalSteps,
-          backgroundColor: Colors.white.withOpacity(0.2),
+          backgroundColor: Colors.white.withValues(alpha: 0.2),
           valueColor: const AlwaysStoppedAnimation<Color>(
             AppColors.primaryPurple,
           ),

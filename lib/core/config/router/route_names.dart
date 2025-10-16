@@ -37,6 +37,7 @@ class RouteNames {
   static const String offerDetails = '/offer-details';
   static const String allOffers = '/all-offers';
   static const String allTopGames = '/all-top-games';
+  static const String allInAppTasks = '/all-in-app-tasks';
 
   // Support
   static const String support = '/support';

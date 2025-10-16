@@ -2,12 +2,12 @@ import 'dart:ui';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:country_picker/country_picker.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/config/router/route_names.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
-import '../../../../core/widgets/dialog_button.dart';
+import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/dialog_progress_indicator.dart';
 import 'gender_selection_step.dart';
 import 'country_selection_step.dart';
@@ -40,10 +40,10 @@ class _PersonalizationDialogState extends State<PersonalizationDialog> {
               width: 340.w,
               padding: EdgeInsets.all(24.w),
               decoration: BoxDecoration(
-                color: const Color(0xFF1A1A2E).withOpacity(0.95),
+                color: const Color(0xFF1A1A2E).withValues(alpha: 0.95),
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                   width: 1,
                 ),
               ),
@@ -89,7 +89,7 @@ class _PersonalizationDialogState extends State<PersonalizationDialog> {
 
                   // Buttons
                   if (currentStep == 1)
-                    DialogButton(
+                    CustomButton(
                       text: 'Next',
                       onPressed: selectedGender != null
                           ? () {
@@ -103,19 +103,22 @@ class _PersonalizationDialogState extends State<PersonalizationDialog> {
                     Row(
                       children: [
                         Expanded(
-                          child: DialogButton(
+                          child: CustomButton(
                             text: 'Back',
                             onPressed: () {
                               setState(() {
                                 currentStep = 1;
                               });
                             },
-                            isPrimary: false,
+                            backgroundColor: AppColors.primaryPurple.withValues(
+                              alpha: 0.1,
+                            ),
+                            textColor: AppColors.textPrimary,
                           ),
                         ),
                         SizedBox(width: 12.w),
                         Expanded(
-                          child: DialogButton(
+                          child: CustomButton(
                             text: 'Finish',
                             onPressed: selectedCountry != null
                                 ? () {

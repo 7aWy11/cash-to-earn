@@ -18,7 +18,8 @@ class PartnerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.h,
+      width: 176.w,
+      height: 95.h,
       decoration: BoxDecoration(
         gradient: gradient,
         borderRadius: BorderRadius.circular(12.r),
@@ -30,7 +31,7 @@ class PartnerCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(Icons.person, color: AppColors.white, size: 20.sp),
-            SizedBox(height: 4.h),
+            SizedBox(height: 10.h),
             Text(
               name,
               style: AppTextStyles.bodySmall.copyWith(
@@ -43,10 +44,9 @@ class PartnerCard extends StatelessWidget {
             Text(
               description,
               style: AppTextStyles.bodySmall.copyWith(
-                color: AppColors.white.withOpacity(0.8),
+                color: AppColors.white.withValues(alpha: 0.8),
                 fontSize: 10.sp,
               ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),

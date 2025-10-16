@@ -126,15 +126,3 @@ flutter:
           weight: 500
         - asset: assets/fonts/SFPRODISPLAYBOLD.otf
           weight: 700
-        - asset: assets/fonts/SFPRODISPLAYBLACKITALIC.otf
-          weight: 900
-        - asset: assets/fonts/SFPRODISPLAYHEAVYITALIC.otf
-          weight: 800
-        - asset: assets/fonts/SFPRODISPLAYLIGHTITALIC.otf
-          weight: 300
-        - asset: assets/fonts/SFPRODISPLAYSEMIBOLDITALIC.otf
-          weight: 600
-        - asset: assets/fonts/SFPRODISPLAYTHINITALIC.otf
-          weight: 100
-        - asset: assets/fonts/SFPRODISPLAYULTRALIGHTITALIC.otf
-          weight: 200

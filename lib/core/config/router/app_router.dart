@@ -7,6 +7,7 @@ import '../../../features/auth/presentation/pages/username_avatar_screen.dart';
 import '../../../features/main_navigation/presentation/pages/main_navigation_screen.dart';
 import '../../../features/home/presentation/pages/all_offers_screen.dart';
 import '../../../features/home/presentation/pages/all_top_games_screen.dart';
+import '../../../features/home/presentation/pages/all_in_app_tasks_screen.dart';
 import 'route_names.dart';
 
 /// GoRouter configuration for the app
@@ -60,6 +61,13 @@ class AppRouter {
         path: RouteNames.allTopGames,
         name: 'all-top-games',
         builder: (context, state) => const AllTopGamesScreen(),
+      ),
+
+      // All In-App Tasks
+      GoRoute(
+        path: RouteNames.allInAppTasks,
+        name: 'all-in-app-tasks',
+        builder: (context, state) => const AllInAppTasksScreen(),
       ),
 
       // Offer Details

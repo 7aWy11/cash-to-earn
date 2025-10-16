@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 
@@ -21,25 +22,15 @@ class PremiumPartnerCard extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 12.h),
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
-        color: AppColors.backgroundCard,
+        color: AppColors.goldYellowBlur,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: AppColors.goldYellow, width: 1),
+        border: Border.all(
+          color: AppColors.goldYellow.withValues(alpha: 0.3),
+          width: 1,
+        ),
       ),
       child: Row(
         children: [
-          // Icon placeholder
-          Container(
-            width: 40.w,
-            height: 40.w,
-            decoration: BoxDecoration(
-              color: AppColors.goldYellow,
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Icon(Icons.star, color: AppColors.white, size: 20.sp),
-          ),
-
-          SizedBox(width: 12.w),
-
           // Content
           Expanded(
             child: Column(
@@ -48,11 +39,17 @@ class PremiumPartnerCard extends StatelessWidget {
                 Text(
                   name,
                   style: AppTextStyles.bodyMedium.copyWith(
-                    fontWeight: FontWeight.w600,
+                    color: AppColors.goldYellow,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(height: 2.h),
-                Text(description, style: AppTextStyles.bodySmallSecondary),
+                SizedBox(height: 4.h),
+                Text(
+                  description,
+                  style: AppTextStyles.bodyMedium.copyWith(
+                    color: AppColors.goldYellow.withValues(alpha: 0.7),
+                  ),
+                ),
               ],
             ),
           ),
@@ -65,10 +62,16 @@ class PremiumPartnerCard extends StatelessWidget {
                 maxReward,
                 style: AppTextStyles.bodyMedium.copyWith(
                   color: AppColors.goldYellow,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
-              Text('Max Reward', style: AppTextStyles.bodySmallSecondary),
+              SizedBox(height: 2.h),
+              Text(
+                'Max Reward',
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.goldYellow.withValues(alpha: 0.7),
+                ),
+              ),
             ],
           ),
         ],

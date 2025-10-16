@@ -5,8 +5,8 @@ class AppColors {
   AppColors._();
 
   // Primary Colors
-  static const Color primaryPurple = Color(0xFF8B5CF6);
-  static const Color primaryPurpleDark = Color(0xFF7C3AED);
+  static const Color primaryPurple = Color(0xFFA742EB);
+  static const Color primaryPurpleDark = Color(0xFF571277);
   static const Color primaryPurpleLight = Color(0xFF9D6FF9);
   static const Color primaryPurpleSecondary = Color(0xFF210D2F);
 
@@ -40,6 +40,7 @@ class AppColors {
   static const Color goldYellow = Color(0xFFEAB308);
   static const Color goldYellowDark = Color(0xFFCA8A04);
   static const Color goldYellowLight = Color(0xFFFACC15);
+  static const Color goldYellowBlur = Color(0xFF1A1A0A);
 
   // Background Colors (Dark Theme)
   static const Color backgroundDark = Color(0xFF0F0F1A);

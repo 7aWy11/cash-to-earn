@@ -12,14 +12,40 @@ import '../widgets/trending_offers_list.dart';
 import '../widgets/top_games_offers_list.dart';
 import '../widgets/partner_card.dart';
 import '../widgets/premium_partner_card.dart';
-import '../widgets/task_card.dart';
+import '../widgets/in_app_tasks_list.dart';
 import '../widgets/payout_item.dart';
 import '../../data/models/trending_offer.dart';
 import '../../data/models/top_game_offer.dart';
+import '../../data/models/in_app_task.dart';
+import '../../../auth/presentation/widgets/welcome_onboarding_dialog.dart';
 
 /// Home screen - Main offers screen matching the design image
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  // Static variable to track if welcome dialog has been shown in this app session
+  static bool _hasShownWelcomeDialog = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Show welcome dialog only once per app session
+    if (!_hasShownWelcomeDialog) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Future.delayed(const Duration(milliseconds: 500), () {
+          if (mounted) {
+            _hasShownWelcomeDialog = true;
+            showWelcomeOnboardingDialog(context);
+          }
+        });
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -317,7 +343,7 @@ class HomeScreen extends StatelessWidget {
                           Text('In-App Tasks', style: AppTextStyles.h5),
                           GestureDetector(
                             onTap: () {
-                              // TODO: Navigate to all tasks screen
+                              context.push(RouteNames.allInAppTasks);
                             },
                             child: Text(
                               'View All',
@@ -330,22 +356,14 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 12.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        children: [
-                          TaskCard(
-                            title: 'Daily Check-in',
-                            description: 'Login daily to earn bonus',
-                            reward: '\$0.50',
-                          ),
-                          TaskCard(
-                            title: 'Play 3 Games',
-                            description: 'Complete gaming challenges',
-                            reward: '\$2.00',
-                          ),
-                        ],
-                      ),
+                    InAppTasksList(
+                      tasks: InAppTask.sampleTasks,
+                      height: 220.h,
+                      onTaskTap: (task) {
+                        log(task.title);
+                        // TODO: Navigate to task details screen
+                        // context.push('${RouteNames.taskDetails}/${task.id}');
+                      },
                     ),
 
                     SizedBox(height: 24.h),

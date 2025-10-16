@@ -47,12 +47,14 @@ class GenderSelectionStep extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color: const Color(0xFF2D2D3A).withOpacity(0.6),
+          color: isSelected
+              ? AppColors.primaryPurpleDark.withValues(alpha: 0.4)
+              : AppColors.primaryPurpleDark.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
             color: isSelected
                 ? AppColors.primaryPurple
-                : Colors.white.withOpacity(0.1),
+                : Colors.white.withValues(alpha: 0.1),
             width: 1.5,
           ),
         ),
@@ -78,7 +80,7 @@ class GenderSelectionStep extends StatelessWidget {
                 border: Border.all(
                   color: isSelected
                       ? AppColors.primaryPurple
-                      : Colors.white.withOpacity(0.3),
+                      : Colors.white.withValues(alpha: 0.3),
                   width: 2,
                 ),
               ),
@@ -101,6 +103,3 @@ class GenderSelectionStep extends StatelessWidget {
     );
   }
 }
-
-
-

@@ -22,7 +22,7 @@ class CountrySelectionStep extends StatelessWidget {
       children: [
         Text(
           'What is your country?',
-          style: AppTextStyles.h5.copyWith(color: AppColors.white),
+          style: AppTextStyles.h6.copyWith(color: AppColors.white),
         ),
         SizedBox(height: 12.h),
         InkWell(
@@ -31,9 +31,12 @@ class CountrySelectionStep extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             decoration: BoxDecoration(
-              color: const Color(0xFF2D2D3A),
+              color: AppColors.primaryPurpleDark.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: Colors.white, width: 1),
+              border: Border.all(
+                color: AppColors.primaryPurple.withValues(alpha: 0.3),
+                width: 1,
+              ),
             ),
             child: Row(
               children: [
