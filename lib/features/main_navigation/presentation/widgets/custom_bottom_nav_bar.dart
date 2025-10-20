@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/config/theme/app_colors.dart';
+import '../../../../core/constants/asset_paths.dart';
 
 /// Custom bottom navigation bar
 class CustomBottomNavBar extends StatelessWidget {
@@ -20,7 +22,7 @@ class CustomBottomNavBar extends StatelessWidget {
         color: AppColors.backgroundCard,
         boxShadow: [
           BoxShadow(
-            color: AppColors.black.withOpacity(0.1),
+            color: AppColors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -32,10 +34,10 @@ class CustomBottomNavBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNavItem(0, Icons.home_rounded, 'Home'),
-              _buildNavItem(1, Icons.assignment_rounded, 'My Offers'),
-              _buildNavItem(2, Icons.account_balance_wallet_rounded, 'Cashout'),
-              _buildNavItem(3, Icons.person_rounded, 'Profile'),
+              _buildNavItem(0, 'Earn', 'Earn'),
+              _buildNavItem(1, 'My Offers', 'My Offers'),
+              _buildNavItem(2, 'Cashout', 'Cashout'),
+              _buildNavItem(3, 'Profile', 'Profile'),
             ],
           ),
         ),
@@ -43,8 +45,33 @@ class CustomBottomNavBar extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(int index, IconData icon, String label) {
+  Widget _buildNavItem(int index, String iconType, String label) {
     final isSelected = currentIndex == index;
+
+    // Get the appropriate SVG icon path based on selection state
+    String iconPath;
+    switch (iconType) {
+      case 'Earn':
+        iconPath = isSelected ? AppImages.earnIcon : AppImages.inactiveEarnIcon;
+        break;
+      case 'My Offers':
+        iconPath = isSelected
+            ? AppImages.myOffersIcon
+            : AppImages.inactiveMyOffersIcon;
+        break;
+      case 'Cashout':
+        iconPath = isSelected
+            ? AppImages.cashoutIcon
+            : AppImages.inactiveCashoutIcon;
+        break;
+      case 'Profile':
+        iconPath = isSelected
+            ? AppImages.profileIcon
+            : AppImages.inactiveProfileIcon;
+        break;
+      default:
+        iconPath = AppImages.inactiveEarnIcon; // fallback
+    }
 
     return InkWell(
       onTap: () => onTap(index),
@@ -54,12 +81,16 @@ class CustomBottomNavBar extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              icon,
-              color: isSelected
-                  ? AppColors.primaryPurple
-                  : AppColors.textTertiary,
-              size: 24.sp,
+            SvgPicture.asset(
+              iconPath,
+              width: 24.w,
+              height: 24.h,
+              colorFilter: ColorFilter.mode(
+                isSelected
+                    ? AppColors.primaryPurple.withValues(alpha: 0.8)
+                    : AppColors.textTertiary,
+                BlendMode.srcIn,
+              ),
             ),
             SizedBox(height: 4.h),
             Text(

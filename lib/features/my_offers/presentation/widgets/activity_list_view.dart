@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
-import '../../../../core/config/router/route_names.dart';
-import '../widgets/trending_offers_list.dart';
-import '../../data/models/trending_offer.dart';
+import '../../../../core/widgets/custom_list_view_builder.dart';
+import '../../data/models/my_offars_model.dart';
+import 'recent_activity_card.dart';
 
-class AllOffersScreen extends StatelessWidget {
-  const AllOffersScreen({super.key});
+class AllActivitiesScreen extends StatelessWidget {
+  const AllActivitiesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class AllOffersScreen extends StatelessWidget {
           ),
           onPressed: () => context.pop(),
         ),
-        title: Text('All Trending Offers', style: AppTextStyles.h4),
+        title: Text('All Activities', style: AppTextStyles.h4),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -38,22 +38,28 @@ class AllOffersScreen extends StatelessWidget {
               // Section Header
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text('All Trending Offers', style: AppTextStyles.h5),
+                child: Text('Recent Activity', style: AppTextStyles.h5),
               ),
 
               SizedBox(height: 12.h),
 
-              // All Offers List
-              Padding(
+              // All Activities List
+              CustomListViewBuilder(
+                itemCount: ActivityItem.sampleActivities.length,
+                itemBuilder: (context, index) {
+                  final activity = ActivityItem.sampleActivities[index];
+                  return GestureDetector(
+                    onTap: () {
+                      // TODO: Navigate to activity details if needed
+                    },
+                    child: ActivityItemCard(activity: activity),
+                  );
+                },
+                orientation: ListOrientation.vertical,
+                spacing: 8.h,
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: TrendingOffersList(
-                  offers: TrendingOffer.sampleOffers,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  onOfferTap: (offer) {
-                    context.push('${RouteNames.offerDetails}/${offer.id}');
-                  },
-                ),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
               ),
 
               SizedBox(height: 32.h),

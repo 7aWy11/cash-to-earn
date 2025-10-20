@@ -4,7 +4,7 @@ import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/widgets/custom_list_view_builder.dart';
 import '../../data/models/trending_offer.dart';
-import '../widgets/trending_offer_card.dart';
+import 'trending_offer_card.dart';
 
 class TrendingOffersList extends StatelessWidget {
   final List<TrendingOffer> offers;

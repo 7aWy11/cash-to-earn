@@ -39,10 +39,14 @@ class CustomAppHeader extends StatelessWidget {
           ),
           child: Row(
             children: [
-              // Hamburger menu
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.menu, color: AppColors.white, size: 24.sp),
+              // Hamburger menu - Use Builder for correct context
+              Builder(
+                builder: (context) => IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: Icon(Icons.menu, color: AppColors.white, size: 24.sp),
+                ),
               ),
 
               const Spacer(),
@@ -75,7 +79,7 @@ class CustomAppHeader extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        SvgPicture.asset(AppImages.money),
+                        SvgPicture.asset(AppImages.earnIcon),
                         SizedBox(width: 6.w),
                         Text(
                           '\$${balance.toStringAsFixed(2)}',

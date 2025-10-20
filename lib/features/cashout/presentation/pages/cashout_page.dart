@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_app_header.dart';
+import '../../../main_navigation/presentation/widgets/side_drawer.dart';
 
 class CashoutScreen extends StatelessWidget {
   const CashoutScreen({super.key});
@@ -11,6 +12,7 @@ class CashoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SideDrawer(),
       backgroundColor: AppColors.backgroundDark,
 
       body: SafeArea(

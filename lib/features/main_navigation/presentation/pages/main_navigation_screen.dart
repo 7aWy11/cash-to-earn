@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../cashout/presentation/pages/cashout_page.dart';
 import '../widgets/custom_bottom_nav_bar.dart';
 import '../widgets/side_drawer.dart';
-import '../../../home/presentation/pages/home_screen.dart';
+import '../../../earn/presentation/pages/home_screen.dart';
 import '../../../my_offers/presentation/pages/my_offers_screen.dart';
 import '../../../profile/presentation/pages/profile_screen.dart';
 

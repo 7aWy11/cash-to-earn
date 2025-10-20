@@ -8,6 +8,8 @@ import '../../../../core/config/theme/app_gradients.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/config/router/route_names.dart';
 import '../../../../core/widgets/custom_app_header.dart';
+import '../../../../core/widgets/custom_section _header.dart';
+import '../../../main_navigation/presentation/widgets/side_drawer.dart';
 import '../widgets/trending_offers_list.dart';
 import '../widgets/top_games_offers_list.dart';
 import '../widgets/partner_card.dart';
@@ -50,6 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SideDrawer(),
+
       backgroundColor: AppColors.backgroundDark,
       body: SafeArea(
         child: Column(
@@ -66,25 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 16.h),
 
                     // Trending Offers Section
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Trending Offers', style: AppTextStyles.h5),
-                          GestureDetector(
-                            onTap: () {
-                              context.push(RouteNames.allOffers);
-                            },
-                            child: Text(
-                              'View All',
-                              style: AppTextStyles.bodySmall.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    CustomSectionHeader(
+                      title: 'Trending Offers',
+                      onViewAllTap: () {
+                        context.push(RouteNames.allOffers);
+                      },
                     ),
                     SizedBox(height: 12.h),
                     Padding(
@@ -107,25 +97,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 24.h),
 
                     // Top Games Offers Section
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Top Games Offers', style: AppTextStyles.h5),
-                          GestureDetector(
-                            onTap: () {
-                              context.push(RouteNames.allTopGames);
-                            },
-                            child: Text(
-                              'View All',
-                              style: AppTextStyles.bodySmall.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    CustomSectionHeader(
+                      title: 'Top Games Offers',
+                      onViewAllTap: () {
+                        context.push(RouteNames.allTopGames);
+                      },
                     ),
                     SizedBox(height: 12.h),
                     TopGamesOffersList(
@@ -140,25 +116,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 24.h),
 
                     // Offer Partners Section
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Offer Partners', style: AppTextStyles.h5),
-                          GestureDetector(
-                            onTap: () {
-                              // TODO: Navigate to all partners screen
-                            },
-                            child: Text(
-                              'View All',
-                              style: AppTextStyles.bodySmall.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    CustomSectionHeader(
+                      title: 'Offer Partners',
+                      onViewAllTap: () {
+                        // TODO: Navigate to all partners screen
+                      },
                     ),
                     SizedBox(height: 12.h),
                     Padding(
@@ -211,25 +173,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 24.h),
 
                     // Premium Partners Section
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Premium Partners', style: AppTextStyles.h5),
-                          GestureDetector(
-                            onTap: () {
-                              // TODO: Navigate to all premium partners screen
-                            },
-                            child: Text(
-                              'View All',
-                              style: AppTextStyles.bodySmall.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    CustomSectionHeader(
+                      title: 'Premium Partners',
+                      onViewAllTap: () {
+                        // TODO: Navigate to all premium partners screen
+                      },
                     ),
                     SizedBox(height: 12.h),
                     Padding(
@@ -253,25 +201,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 24.h),
 
                     // Survey Partners Section
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Survey Partners', style: AppTextStyles.h5),
-                          GestureDetector(
-                            onTap: () {
-                              // TODO: Navigate to all survey partners screen
-                            },
-                            child: Text(
-                              'View All',
-                              style: AppTextStyles.bodySmall.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    CustomSectionHeader(
+                      title: 'Survey Partners',
+                      onViewAllTap: () {
+                        // TODO: Navigate to all survey partners screen
+                      },
                     ),
                     SizedBox(height: 12.h),
                     Padding(
@@ -335,25 +269,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 24.h),
 
                     // In-App Tasks Section
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('In-App Tasks', style: AppTextStyles.h5),
-                          GestureDetector(
-                            onTap: () {
-                              context.push(RouteNames.allInAppTasks);
-                            },
-                            child: Text(
-                              'View All',
-                              style: AppTextStyles.bodySmall.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    CustomSectionHeader(
+                      title: 'In-App Tasks',
+                      onViewAllTap: () {
+                        context.push(RouteNames.allInAppTasks);
+                      },
                     ),
                     SizedBox(height: 12.h),
                     InAppTasksList(

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/router/route_names.dart';
+import '../../../../core/widgets/custom_section _header.dart';
 import '../widgets/top_game_offer_card.dart';
 import '../../data/models/top_game_offer.dart';
 
@@ -28,8 +29,14 @@ class AllTopGamesScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 16.h),
+
+              // Section Header
+              CustomSectionHeader(title: 'All Top Games', showViewAll: false),
+
+              SizedBox(height: 12.h),
 
               // Grid view of all top games
               Padding(

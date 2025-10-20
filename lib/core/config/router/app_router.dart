@@ -5,9 +5,11 @@ import '../../../features/auth/presentation/pages/landing_screen.dart';
 import '../../../features/auth/presentation/pages/create_account_screen.dart';
 import '../../../features/auth/presentation/pages/username_avatar_screen.dart';
 import '../../../features/main_navigation/presentation/pages/main_navigation_screen.dart';
-import '../../../features/home/presentation/pages/all_offers_screen.dart';
-import '../../../features/home/presentation/pages/all_top_games_screen.dart';
-import '../../../features/home/presentation/pages/all_in_app_tasks_screen.dart';
+import '../../../features/earn/presentation/pages/all_offers_screen.dart';
+import '../../../features/earn/presentation/pages/all_top_games_screen.dart';
+import '../../../features/earn/presentation/pages/all_in_app_tasks_screen.dart';
+import '../../../features/my_offers/presentation/pages/my_offers_screen.dart';
+import '../../../features/my_offers/presentation/pages/all_activities_screen.dart';
 import 'route_names.dart';
 
 /// GoRouter configuration for the app
@@ -68,6 +70,20 @@ class AppRouter {
         path: RouteNames.allInAppTasks,
         name: 'all-in-app-tasks',
         builder: (context, state) => const AllInAppTasksScreen(),
+      ),
+
+      // My Offers
+      GoRoute(
+        path: RouteNames.myOffers,
+        name: 'my-offers',
+        builder: (context, state) => const MyOffersScreen(),
+      ),
+
+      // All Activities
+      GoRoute(
+        path: RouteNames.allActivities,
+        name: 'all-activities',
+        builder: (context, state) => const AllActivitiesScreen(),
       ),
 
       // Offer Details

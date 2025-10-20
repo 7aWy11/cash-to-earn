@@ -11,6 +11,7 @@ class AppColors {
   static const Color primaryPurpleSecondary = Color(0xFF210D2F);
 
   // Accent Colors
+  static const Color accentBlue = Color(0xFF006FFE);
   static const Color vibrantBlue = Color(0xFF3B82F6);
   static const Color vibrantBlueDark = Color(0xFF2563EB);
   static const Color vibrantBlueLight = Color(0xFF60A5FA);
@@ -20,6 +21,8 @@ class AppColors {
   static const Color successGreenDark = Color(0xFF059669);
   static const Color successGreenLight = Color(0xFF34D399);
   static const Color price = Color(0xFF00FF15);
+  static const Color myoffersGreen = Color(0xFF05C916);
+  static const Color myoffersGreenBlur = Color(0xff011503);
 
   // Warning & Alert
   static const Color warningOrange = Color(0xFFF97316);
@@ -47,6 +50,7 @@ class AppColors {
   static const Color backgroundDarkSecondary = Color(0xFF1A1A2E);
   static const Color backgroundCard = Color(0xFF1E1E30);
   static const Color backgroundCardElevated = Color(0xFF252538);
+  static const Color drawerBackground = Color(0xFF18121C);
 
   // Surface Colors
   static const Color surfaceDark = Color(0xFF16162A);

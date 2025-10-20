@@ -88,6 +88,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/icons/active_icons/
+    - assets/icons/inactive_icons/
     - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see

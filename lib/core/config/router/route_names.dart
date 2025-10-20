@@ -19,6 +19,8 @@ class RouteNames {
 
   // My Offers
   static const String myOffers = '/main/my-offers';
+  static const String allActivities = '/all-activities';
+  static const String analyticsDetails = '/analytics-details';
 
   // Cashout
   static const String cashout = '/main/cashout';

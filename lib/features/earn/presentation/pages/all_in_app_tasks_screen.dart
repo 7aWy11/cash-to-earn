@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_section _header.dart';
 import '../widgets/in_app_taskes_card.dart';
 import '../../data/models/in_app_task.dart';
 
@@ -16,8 +17,14 @@ class AllInAppTasksScreen extends StatelessWidget {
       backgroundColor: AppColors.backgroundDark,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 16.h),
+
+            // Section Header
+            CustomSectionHeader(title: 'All In-App Tasks', showViewAll: false),
+
+            SizedBox(height: 12.h),
 
             // Grid view of all in-app tasks
             Padding(
