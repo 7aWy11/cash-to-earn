@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-/// Withdrawal Container - Individual payment method card
-class WithdrawalContainer extends StatelessWidget {
+/// Payment Method Container - Individual payment method card (withdraw/crypto)
+class PaymentMethodContainer extends StatelessWidget {
   final String name;
   final String imagePath;
   final String? minimum;
@@ -12,7 +12,7 @@ class WithdrawalContainer extends StatelessWidget {
   final VoidCallback? onTap;
   final bool isSelected;
 
-  const WithdrawalContainer({
+  const PaymentMethodContainer({
     super.key,
     required this.name,
     required this.imagePath,

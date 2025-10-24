@@ -6,7 +6,7 @@ import 'withdraw_amount_step.dart';
 import 'withdraw_confirm_step.dart';
 import 'withdraw_complete_step.dart';
 
-class WithdrawDialog extends StatefulWidget {
+class PaymentMethodDialog extends StatefulWidget {
   final String paymentMethod;
   final String minimumAmount;
   final String fee;
@@ -14,7 +14,7 @@ class WithdrawDialog extends StatefulWidget {
   final double currentBalance;
   final int currentCoins;
 
-  const WithdrawDialog({
+  const PaymentMethodDialog({
     super.key,
     required this.paymentMethod,
     required this.minimumAmount,
@@ -25,10 +25,10 @@ class WithdrawDialog extends StatefulWidget {
   });
 
   @override
-  State<WithdrawDialog> createState() => _WithdrawDialogState();
+  State<PaymentMethodDialog> createState() => _PaymentMethodDialogState();
 }
 
-class _WithdrawDialogState extends State<WithdrawDialog> {
+class _PaymentMethodDialogState extends State<PaymentMethodDialog> {
   int currentStep = 1;
   int amountCoins = 50;
   String paypalEmail = 'user@paypal.com';

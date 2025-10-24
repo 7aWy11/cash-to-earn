@@ -8,21 +8,26 @@ import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/widgets/custom_app_header.dart';
 import '../../../main_navigation/presentation/widgets/side_drawer.dart';
-import '../widgets/withdraw_gridview.dart';
-import '../widgets/withdraw_dialog.dart';
+import '../widgets/payment_method_dialog.dart';
+import '../widgets/payment_method_gridview.dart';
+import '../../data/models/payment_method_data.dart';
 
 class CashoutScreen extends StatelessWidget {
   const CashoutScreen({super.key});
 
-  void _showWithdrawDialog(BuildContext context, String methodName) {
-    // Define method details based on the method name
-    Map<String, dynamic> methodDetails = _getMethodDetails(methodName);
+  void _showPaymentDialog(BuildContext context, String methodName) {
+    // Get method details from data
+    Map<String, dynamic>? methodDetails = PaymentMethodData.getMethodDetails(
+      methodName,
+    );
+
+    if (methodDetails == null) return;
 
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return WithdrawDialog(
+        return PaymentMethodDialog(
           paymentMethod: methodDetails['name'],
           minimumAmount: methodDetails['minimum'],
           fee: methodDetails['fee'],
@@ -32,46 +37,6 @@ class CashoutScreen extends StatelessWidget {
         );
       },
     );
-  }
-
-  Map<String, dynamic> _getMethodDetails(String methodName) {
-    switch (methodName) {
-      case 'PayPal':
-        return {
-          'name': 'PayPal',
-          'minimum': '\$1.00',
-          'fee': 'Fee: Free',
-          'color': AppColors.accentBlue,
-        };
-      case 'Amazon':
-        return {
-          'name': 'Amazon',
-          'minimum': '\$5.00',
-          'fee': 'Fee: Free',
-          'color': const Color(0xFFFF9900),
-        };
-      case 'Payeer':
-        return {
-          'name': 'Payeer',
-          'minimum': '\$1.00',
-          'fee': 'Fee: Free',
-          'color': const Color(0xFF00C853),
-        };
-      case 'Bitcoin':
-        return {
-          'name': 'Bitcoin',
-          'minimum': '\$10.00',
-          'fee': 'Fee: Network',
-          'color': AppColors.goldYellow,
-        };
-      default:
-        return {
-          'name': 'PayPal',
-          'minimum': '\$1.00',
-          'fee': 'Fee: Free',
-          'color': AppColors.accentBlue,
-        };
-    }
   }
 
   @override
@@ -195,16 +160,29 @@ class CashoutScreen extends StatelessWidget {
                       onViewAllTap: () {},
                     ),
                     SizedBox(height: 10.h),
-                    WithdrawGridView(
+                    PaymentMethodGridView(
                       padding: EdgeInsets.zero,
+                      paymentMethods: PaymentMethodData.withdrawMethods,
                       onMethodTap: (method) {
-                        _showWithdrawDialog(context, method);
+                        _showPaymentDialog(context, method);
                       },
                     ),
                     SizedBox(height: 16.h),
-                    CustomSectionHeader(title: 'Crypto', showViewAll: true),
+                    CustomSectionHeader(
+                      title: 'Crypto',
+                      showViewAll: true,
+                      padding: EdgeInsets.zero,
+                      onViewAllTap: () {},
+                    ),
+                    SizedBox(height: 10.h),
+                    PaymentMethodGridView(
+                      padding: EdgeInsets.zero,
+                      paymentMethods: PaymentMethodData.cryptoMethods,
+                      onMethodTap: (method) {
+                        _showPaymentDialog(context, method);
+                      },
+                    ),
                     SizedBox(height: 16.h),
-                    
                   ],
                 ),
               ),

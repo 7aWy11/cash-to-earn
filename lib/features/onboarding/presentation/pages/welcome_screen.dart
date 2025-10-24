@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/config/router/route_names.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
+import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/constants/string_constants.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/glassmorphism_button.dart';
@@ -20,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/Background.png'),
+            image: AssetImage(AppImages.background),
             fit: BoxFit.cover,
           ),
         ),
@@ -70,13 +71,13 @@ class WelcomeScreen extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            AppColors.white.withOpacity(0.1),
-                            AppColors.white.withOpacity(0.05),
+                            AppColors.white.withValues(alpha: 0.1),
+                            AppColors.white.withValues(alpha: 0.05),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
-                          color: AppColors.white.withOpacity(0.2),
+                          color: AppColors.white.withValues(alpha: 0.2),
                           width: 1,
                         ),
                       ),
