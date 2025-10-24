@@ -2,6 +2,7 @@ import 'package:cash_to_earn/core/widgets/custom_section%20_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
@@ -11,6 +12,7 @@ import '../../../main_navigation/presentation/widgets/side_drawer.dart';
 import '../widgets/payment_method_dialog.dart';
 import '../widgets/payment_method_gridview.dart';
 import '../../data/models/payment_method_data.dart';
+import '../../../../core/config/router/route_names.dart';
 
 class CashoutScreen extends StatelessWidget {
   const CashoutScreen({super.key});
@@ -157,12 +159,14 @@ class CashoutScreen extends StatelessWidget {
                       title: 'Withdraw',
                       showViewAll: true,
                       padding: EdgeInsets.zero,
-                      onViewAllTap: () {},
+                      onViewAllTap: () {
+                        context.push(RouteNames.allWithdrawMethods);
+                      },
                     ),
                     SizedBox(height: 10.h),
                     PaymentMethodGridView(
                       padding: EdgeInsets.zero,
-                      paymentMethods: PaymentMethodData.withdrawMethods,
+                      paymentMethods: PaymentMethodData.limitedWithdrawMethods,
                       onMethodTap: (method) {
                         _showPaymentDialog(context, method);
                       },
@@ -172,12 +176,14 @@ class CashoutScreen extends StatelessWidget {
                       title: 'Crypto',
                       showViewAll: true,
                       padding: EdgeInsets.zero,
-                      onViewAllTap: () {},
+                      onViewAllTap: () {
+                        context.push(RouteNames.allCryptoMethods);
+                      },
                     ),
                     SizedBox(height: 10.h),
                     PaymentMethodGridView(
                       padding: EdgeInsets.zero,
-                      paymentMethods: PaymentMethodData.cryptoMethods,
+                      paymentMethods: PaymentMethodData.limitedCryptoMethods,
                       onMethodTap: (method) {
                         _showPaymentDialog(context, method);
                       },

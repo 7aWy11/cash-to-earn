@@ -10,6 +10,8 @@ import '../../../features/earn/presentation/pages/all_top_games_screen.dart';
 import '../../../features/earn/presentation/pages/all_in_app_tasks_screen.dart';
 import '../../../features/my_offers/presentation/pages/my_offers_screen.dart';
 import '../../../features/my_offers/presentation/pages/all_activities_screen.dart';
+import '../../../features/cashout/presentation/pages/all_withdraw_methods_page.dart';
+import '../../../features/cashout/presentation/pages/all_crypto_methods_page.dart';
 import 'route_names.dart';
 
 /// GoRouter configuration for the app
@@ -96,8 +98,17 @@ class AppRouter {
         },
       ),
 
-      // Withdraw Funds
-  
+      // Cashout Methods
+      GoRoute(
+        path: RouteNames.allWithdrawMethods,
+        name: 'all-withdraw-methods',
+        builder: (context, state) => const AllWithdrawMethodsPage(),
+      ),
+      GoRoute(
+        path: RouteNames.allCryptoMethods,
+        name: 'all-crypto-methods',
+        builder: (context, state) => const AllCryptoMethodsPage(),
+      ),
 
       // Support & Legal
       GoRoute(

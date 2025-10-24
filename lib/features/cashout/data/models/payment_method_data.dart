@@ -33,6 +33,34 @@ class PaymentMethodData {
       'color': Color(0xFF3D95CE),
       'type': 'withdraw',
     },
+    {
+      'name': 'Cash App',
+      'minimum': '\$1.00',
+      'fee': 'Fee: Free',
+      'color': Color(0xFF00D632),
+      'type': 'withdraw',
+    },
+    {
+      'name': 'Skrill',
+      'minimum': '\$5.00',
+      'fee': 'Fee: \$0.50',
+      'color': Color(0xFF862165),
+      'type': 'withdraw',
+    },
+    {
+      'name': 'Apple Pay',
+      'minimum': '\$1.00',
+      'fee': 'Fee: Free',
+      'color': Color(0xFF000000),
+      'type': 'withdraw',
+    },
+    {
+      'name': 'Google Pay',
+      'minimum': '\$1.00',
+      'fee': 'Fee: Free',
+      'color': Color(0xFF4285F4),
+      'type': 'withdraw',
+    },
   ];
 
   // Cryptocurrency methods
@@ -73,6 +101,42 @@ class PaymentMethodData {
       'symbol': 'USDC',
       'network': 'ERC20',
     },
+    {
+      'name': 'Litecoin',
+      'minimum': '\$10.00',
+      'fee': 'Fee: Network',
+      'color': Color(0xFFBEBEBE),
+      'type': 'crypto',
+      'symbol': 'LTC',
+      'network': 'Litecoin',
+    },
+    {
+      'name': 'Dogecoin',
+      'minimum': '\$5.00',
+      'fee': 'Fee: Network',
+      'color': Color(0xFFC2A633),
+      'type': 'crypto',
+      'symbol': 'DOGE',
+      'network': 'Dogecoin',
+    },
+    {
+      'name': 'Binance Coin',
+      'minimum': '\$10.00',
+      'fee': 'Fee: Network',
+      'color': Color(0xFFF3BA2F),
+      'type': 'crypto',
+      'symbol': 'BNB',
+      'network': 'BSC',
+    },
+    {
+      'name': 'Cardano',
+      'minimum': '\$10.00',
+      'fee': 'Fee: Network',
+      'color': Color(0xFF0033AD),
+      'type': 'crypto',
+      'symbol': 'ADA',
+      'network': 'Cardano',
+    },
   ];
 
   // Get all methods combined
@@ -80,6 +144,14 @@ class PaymentMethodData {
     ...withdrawMethods,
     ...cryptoMethods,
   ];
+
+  // Get limited withdraw methods for main page (4 items)
+  static List<Map<String, dynamic>> get limitedWithdrawMethods =>
+      withdrawMethods.take(4).toList();
+
+  // Get limited crypto methods for main page (4 items)
+  static List<Map<String, dynamic>> get limitedCryptoMethods =>
+      cryptoMethods.take(4).toList();
 
   // Get method details by name
   static Map<String, dynamic>? getMethodDetails(String methodName) {
