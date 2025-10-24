@@ -33,7 +33,7 @@ class PerformanceCard extends StatelessWidget {
     return GestureDetector(
       onTap: onActionTap,
       child: Container(
-        height: isWide ? 110.h : 98.h,
+        height: isWide ? 105.h : 90.h,
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
           color: backgroundColor,

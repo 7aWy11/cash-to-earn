@@ -8,28 +8,33 @@ class CustomSectionHeader extends StatelessWidget {
   final String title;
   final VoidCallback? onViewAllTap;
   final bool showViewAll;
+  final EdgeInsetsGeometry? padding;
 
   const CustomSectionHeader({
     super.key,
     required this.title,
     this.onViewAllTap,
     this.showViewAll = true,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: AppTextStyles.h5.copyWith(color: AppColors.white)),
+          Text(
+            title,
+            style: AppTextStyles.bodyLarge.copyWith(color: AppColors.white),
+          ),
           if (showViewAll)
             GestureDetector(
               onTap: onViewAllTap,
               child: Text(
                 'View all',
-                style: AppTextStyles.bodySmall.copyWith(
+                style: AppTextStyles.bodyLarge.copyWith(
                   color: AppColors.textSecondary,
                 ),
               ),

@@ -97,11 +97,7 @@ class AppRouter {
       ),
 
       // Withdraw Funds
-      GoRoute(
-        path: RouteNames.withdrawFunds,
-        name: 'withdraw-funds',
-        builder: (context, state) => const WithdrawFundsPlaceholder(),
-      ),
+  
 
       // Support & Legal
       GoRoute(

@@ -5,6 +5,7 @@ import '../../../../core/config/router/route_names.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/widgets/custom_app_header.dart';
+import '../../../../core/widgets/custom_list_view_builder.dart';
 import '../../../main_navigation/presentation/widgets/side_drawer.dart';
 import '../../data/models/my_offars_model.dart';
 import '../../../../core/widgets/custom_section _header.dart';
@@ -47,15 +48,19 @@ class MyOffersScreen extends StatelessWidget {
                     // Recent Activity List (Show 3 items)
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: ActivityItem.sampleActivities.length > 3
-                            ? 3
+                      child: CustomListViewBuilder(
+                        itemCount: ActivityItem.sampleActivities.length > 2
+                            ? 2
                             : ActivityItem.sampleActivities.length,
+                        orientation: ListOrientation.vertical,
+                        shrinkWrap: true,
+                        scrollable: false,
                         itemBuilder: (context, index) {
                           final activity = ActivityItem.sampleActivities[index];
-                          return ActivityItemCard(activity: activity);
+                          return ActivityItemCard(
+                            key: ValueKey(activity.id),
+                            activity: activity,
+                          );
                         },
                       ),
                     ),

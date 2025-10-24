@@ -24,7 +24,8 @@ class RouteNames {
 
   // Cashout
   static const String cashout = '/main/cashout';
-  static const String withdrawFunds = '/main/cashout/withdraw';
+  static const String allWithdraw = '/main/cashout/withdraw';
+  static const String withdrawFunds = '';
 
   // Profile
   static const String profile = '/main/profile';
