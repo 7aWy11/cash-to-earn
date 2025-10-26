@@ -96,7 +96,7 @@ class CustomAppHeader extends StatelessWidget {
 
               const Spacer(),
 
-              // Gift icon (with blur)
+              // Notification icon (with blur)
               CustomIconButton(
                 svgPath: AppImages.notification,
                 onPressed: () {},

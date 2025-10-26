@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../config/theme/app_colors.dart';
-import '../config/theme/app_gradients.dart';
 import '../config/theme/app_text_styles.dart';
 
 /// Custom button with gradient and various styles
@@ -14,6 +13,7 @@ class CustomButton extends StatelessWidget {
   final Gradient? gradient;
   final Color? backgroundColor;
   final Color? textColor;
+  final TextStyle? textStyle;
   final double? width;
   final double? height;
   final Widget? icon;
@@ -29,6 +29,7 @@ class CustomButton extends StatelessWidget {
     this.gradient,
     this.backgroundColor,
     this.textColor,
+    this.textStyle,
     this.width,
     this.height,
     this.icon,
@@ -38,7 +39,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final effectiveGradient = gradient ?? AppGradients.primaryButton;
+    final effectiveColor = backgroundColor ?? AppColors.primaryPurple;
     final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(12.r);
 
     Widget buttonChild = isLoading
@@ -57,9 +58,11 @@ class CustomButton extends StatelessWidget {
               if (icon != null) ...[icon!, SizedBox(width: 8.w)],
               Text(
                 text,
-                style: AppTextStyles.button.copyWith(
-                  color: textColor ?? AppColors.white,
-                ),
+                style:
+                    textStyle ??
+                    AppTextStyles.button.copyWith(
+                      color: textColor ?? AppColors.white,
+                    ),
               ),
             ],
           );
@@ -70,7 +73,7 @@ class CustomButton extends StatelessWidget {
         height: height ?? 56.h,
         decoration: BoxDecoration(
           borderRadius: effectiveBorderRadius,
-          gradient: effectiveGradient,
+          color: effectiveColor,
         ),
         child: Container(
           margin: EdgeInsets.all(2.w),
@@ -99,8 +102,7 @@ class CustomButton extends StatelessWidget {
       width: width,
       height: height ?? 56.h,
       decoration: BoxDecoration(
-        gradient: backgroundColor == null ? effectiveGradient : null,
-        color: backgroundColor,
+        color: effectiveColor,
         borderRadius: effectiveBorderRadius,
       ),
       child: Material(
@@ -154,7 +156,6 @@ class CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final effectiveSize = size ?? 48.w;
     final effectiveIconSize = iconSize ?? (effectiveSize * 0.5);
-    final effectiveGradient = gradient ?? AppGradients.primaryButton;
 
     Widget iconWidget;
 
@@ -196,11 +197,7 @@ class CustomIconButton extends StatelessWidget {
     return Container(
       width: effectiveSize,
       height: effectiveSize,
-      decoration: BoxDecoration(
-        gradient: backgroundColor == null ? effectiveGradient : null,
-        color: backgroundColor,
-        shape: BoxShape.circle,
-      ),
+      decoration: BoxDecoration(color: backgroundColor, shape: BoxShape.circle),
       child: Material(
         color: Colors.transparent,
         child: InkWell(

@@ -82,6 +82,9 @@ class AppImages {
   static const String inactiveProfileIcon =
       '$_inactiveBottomNavIcons/profile.svg';
 
+  ///Profile placeholder image
+  static const String profilePlaceholder = '$_imagesBase/profile.png';
+
   // ===== Helper Methods =====
   /// Get gender icon based on gender string
   static String getGenderIcon(String? gender) {
