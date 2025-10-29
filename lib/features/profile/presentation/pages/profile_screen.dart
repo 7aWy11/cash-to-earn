@@ -51,7 +51,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 },
               ),
               SizedBox(height: 16.h),
-              Text('Proflie'),
+              Text(
+                'Proflie',
+                style: AppTextStyles.h4.copyWith(
+                  color: AppColors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10.h),
+
               // Profile Items
               ProfileListItem(
                 title: 'Email Address',
@@ -118,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
+              SizedBox(height: 10.h),
               ProfileListItem(
                 title: 'Account Activities',
                 subtitle: 'View your account statistics and withdrawal history',
@@ -163,6 +171,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 10.h),
 
               ProfileListItem(
                 title: 'Two-Factor Authentication',
@@ -195,7 +204,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               // Logout Button
               CustomButton(
+                height: 45.h,
                 text: 'Log Out',
+                borderRadius: BorderRadius.all(Radius.circular(15.r)),
                 onPressed: () {
                   // Show logout confirmation dialog
                   CustomLogoutDialog.show(

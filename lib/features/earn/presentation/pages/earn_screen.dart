@@ -22,14 +22,14 @@ import '../../data/models/in_app_task.dart';
 import '../../../auth/presentation/widgets/welcome_onboarding_dialog.dart';
 
 /// Home screen - Main offers screen matching the design image
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class EarnScreen extends StatefulWidget {
+  const EarnScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<EarnScreen> createState() => _EarnScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _EarnScreenState extends State<EarnScreen> {
   // Static variable to track if welcome dialog has been shown in this app session
   static bool _hasShownWelcomeDialog = false;
 

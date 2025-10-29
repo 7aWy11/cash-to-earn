@@ -34,59 +34,56 @@ class ProfileCard extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors.primaryPurple.withValues(alpha: 0.1),
+            color: AppColors.primaryPurpleSecondary.withOpacity(0.3),
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
-              color: AppColors.border.withValues(alpha: 0.5),
+              color: AppColors.border.withOpacity(0.5),
               width: 1,
             ),
           ),
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: onTap,
-              borderRadius: BorderRadius.circular(12.r),
-              child: Padding(
-                padding: padding ?? EdgeInsets.all(16.w),
-                child: Row(
-                  children: [
-                    // Avatar
-                    _buildAvatar(),
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(12.r),
+            child: Padding(
+              padding: padding ?? EdgeInsets.all(16.w),
+              child: Row(
+                children: [
+                  // Avatar
+                  _buildAvatar(),
 
-                    SizedBox(width: 16.w),
+                  SizedBox(width: 16.w),
 
-                    // Name and Username
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            name,
-                            style: AppTextStyles.h6.copyWith(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                  // Name and Username
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          name,
+                          style: AppTextStyles.h6.copyWith(
+                            color: AppColors.white,
+                            fontWeight: FontWeight.w600,
                           ),
-                          SizedBox(height: 4.h),
-                          Text(
-                            username,
-                            style: AppTextStyles.bodySmall.copyWith(
-                              color: AppColors.textSecondary,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 4.h),
+                        Text(
+                          username,
+                          style: AppTextStyles.bodySmall.copyWith(
+                            color: AppColors.textSecondary,
                           ),
-                        ],
-                      ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ),
+                  ),
 
-                    // Trailing widget (optional)
-                    if (trailing != null) ...[SizedBox(width: 12.w), trailing!],
-                  ],
-                ),
+                  // Trailing widget (optional)
+                  if (trailing != null) ...[SizedBox(width: 12.w), trailing!],
+                ],
               ),
             ),
           ),

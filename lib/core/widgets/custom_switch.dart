@@ -110,8 +110,11 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch>
               decoration: BoxDecoration(
                 color: ColorTween(
                   begin:
-                      widget.inactiveColor ?? Colors.grey.withValues(alpha: .3),
-                  end: widget.activeColor ?? AppColors.primaryPurple,
+                      widget.inactiveColor ??
+                      AppColors.primaryPurple.withValues(alpha: .3),
+                  end:
+                      widget.activeColor ??
+                      AppColors.primaryPurple.withValues(alpha: 0.8),
                 ).evaluate(_animation),
                 borderRadius: BorderRadius.circular(height / 2),
               ),
@@ -124,7 +127,7 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch>
                       width: thumbSize,
                       height: thumbSize,
                       decoration: BoxDecoration(
-                        color: widget.thumbColor ?? Colors.white,
+                        color: widget.thumbColor ?? AppColors.primaryPurple,
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
