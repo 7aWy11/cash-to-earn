@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/config/theme/app_text_styles.dart';
+
 import '../../../../core/config/theme/app_colors.dart';
+import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_list_view_builder.dart';
-import 'top_game_offer_card.dart';
 import '../../data/models/top_game_offer.dart';
+import 'top_game_offer_card.dart';
 
 class TopGamesOffersList extends StatelessWidget {
   final List<TopGameOffer> offers;

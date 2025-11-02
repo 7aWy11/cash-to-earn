@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/widgets/custom_list_view_builder.dart';
-import 'in_app_taskes_card.dart';
 import '../../data/models/in_app_task.dart';
+import 'in_app_taskes_card.dart';
 
 class InAppTasksList extends StatelessWidget {
   final List<InAppTask> tasks;

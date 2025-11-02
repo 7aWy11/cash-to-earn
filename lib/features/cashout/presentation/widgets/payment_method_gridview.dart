@@ -1,7 +1,8 @@
-import 'package:cash_to_earn/features/cashout/presentation/widgets/payment_method_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/constants/asset_paths.dart';
+import 'payment_method_container.dart';
 
 /// Payment Method GridView - Grid of payment method cards (withdraw/crypto)
 class PaymentMethodGridView extends StatelessWidget {

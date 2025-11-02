@@ -1,11 +1,13 @@
 import 'dart:developer' show log;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_section _header.dart';
-import '../widgets/in_app_taskes_card.dart';
 import '../../data/models/in_app_task.dart';
+import '../widgets/in_app_taskes_card.dart';
 
 class AllInAppTasksScreen extends StatelessWidget {
   const AllInAppTasksScreen({super.key});

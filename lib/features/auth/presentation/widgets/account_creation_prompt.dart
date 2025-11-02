@@ -1,4 +1,4 @@
-import 'package:cash_to_earn/core/utils/extensions.dart';
+import '../../../../core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/config/theme/app_colors.dart';

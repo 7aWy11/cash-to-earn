@@ -1,14 +1,13 @@
-import 'package:cash_to_earn/core/widgets/custom_section%20_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
-import '../../../../core/widgets/custom_app_header.dart';
-import '../widgets/payment_method_gridview.dart';
-import '../widgets/payment_method_dialog.dart';
+import '../../../../core/widgets/custom_section%20_header.dart';
 import '../../data/models/payment_method_data.dart';
+import '../widgets/payment_method_dialog.dart';
+import '../widgets/payment_method_gridview.dart';
 
 class AllWithdrawMethodsPage extends StatelessWidget {
   const AllWithdrawMethodsPage({super.key});

@@ -1,16 +1,18 @@
 import 'dart:ui';
+
 import 'package:animate_do/animate_do.dart';
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:country_picker/country_picker.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../core/config/router/route_names.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/dialog_progress_indicator.dart';
-import 'gender_selection_step.dart';
 import 'country_selection_step.dart';
+import 'gender_selection_step.dart';
 
 /// Personalization dialog for gender and country selection
 class PersonalizationDialog extends StatefulWidget {

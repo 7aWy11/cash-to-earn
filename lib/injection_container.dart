@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+
 import 'core/network/api_client.dart';
 import 'core/network/network_info.dart';
 

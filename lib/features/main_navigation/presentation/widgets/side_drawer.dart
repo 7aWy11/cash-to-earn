@@ -1,8 +1,11 @@
-import 'package:cash_to_earn/core/constants/asset_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/config/router/route_names.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
+import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_icon_builder.dart';
 
@@ -35,11 +38,19 @@ class SideDrawer extends StatelessWidget {
             Divider(color: AppColors.border, height: 1.h),
 
             // Menu Items
-            _buildMenuItem('Referrals', AppImages.linkIcon),
-            _buildMenuItem('Leaderboard', AppImages.leaderboardIcon),
-            _buildMenuItem('Shortcut', AppImages.shortcutsIcon),
-            _buildMenuItem('Reward', AppImages.myOffersIcon),
-            _buildMenuItem('Support', AppImages.supportIcon),
+            _buildMenuItem(context, 'Referrals', AppImages.linkIcon, null),
+            _buildMenuItem(
+              context,
+              'Leaderboard',
+              AppImages.leaderboardIcon,
+              null,
+            ),
+            _buildMenuItem(context, 'Shortcut', AppImages.shortcutsIcon, null),
+            _buildMenuItem(context, 'Reward', AppImages.myOffersIcon, () {
+              Navigator.pop(context);
+              context.push(RouteNames.tasksList);
+            }),
+            _buildMenuItem(context, 'Support', AppImages.supportIcon, null),
 
             const Spacer(),
 
@@ -61,7 +72,12 @@ class SideDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(String title, String? svgIconPath) {
+  Widget _buildMenuItem(
+    BuildContext context,
+    String title,
+    String? svgIconPath,
+    VoidCallback? onTap,
+  ) {
     return ListTile(
       leading: SizedBox(
         width: 24.sp,
@@ -73,7 +89,7 @@ class SideDrawer extends StatelessWidget {
         ),
       ),
       title: Text(title, style: AppTextStyles.bodyLarge),
-      onTap: () {},
+      onTap: onTap ?? () {},
     );
   }
 }

@@ -1,5 +1,5 @@
-import 'package:cash_to_earn/core/config/theme/app_colors.dart';
-import 'package:cash_to_earn/core/config/theme/app_text_styles.dart';
+import '../config/theme/app_colors.dart';
+import '../config/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomLogoutDialog extends StatelessWidget {

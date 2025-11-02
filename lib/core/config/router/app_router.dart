@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../features/Tasks/presentation/pages/tasks_screen.dart';
 import '../../../features/onboarding/presentation/pages/welcome_screen.dart';
 import '../../../features/auth/presentation/pages/landing_screen.dart';
 import '../../../features/auth/presentation/pages/create_account_screen.dart';
@@ -12,9 +13,11 @@ import '../../../features/my_offers/presentation/pages/my_offers_screen.dart';
 import '../../../features/my_offers/presentation/pages/all_activities_screen.dart';
 import '../../../features/cashout/presentation/pages/all_withdraw_methods_page.dart';
 import '../../../features/cashout/presentation/pages/all_crypto_methods_page.dart';
+import '../../../features/Tasks/data/models/task_model.dart';
+import '../../../features/Tasks/presentation/pages/task_details_screen.dart';
 import 'route_names.dart';
 
-/// GoRouter configuration for the app
+/// GoRouter configuration for the app 
 class AppRouter {
   AppRouter._();
 
@@ -108,6 +111,23 @@ class AppRouter {
         path: RouteNames.allCryptoMethods,
         name: 'all-crypto-methods',
         builder: (context, state) => const AllCryptoMethodsPage(),
+      ),
+
+      // Tasks List
+      GoRoute(
+        path: RouteNames.tasksList,
+        name: 'tasks-list',
+        builder: (context, state) => const TaskesScreen (),
+      ),
+
+      // Task Details
+      GoRoute(
+        path: RouteNames.taskDetails,
+        name: 'task-details',
+        builder: (context, state) {
+          final task = state.extra as TaskModel?;
+          return TaskDetailsScreen(task: task);
+        },
       ),
 
       // Support & Legal

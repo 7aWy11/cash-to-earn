@@ -1,16 +1,17 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_text_field.dart';
-import '../widgets/social_login_button.dart';
-import '../widgets/personalization_dialog.dart';
-import '../widgets/terms_and_conditions_checkbox.dart';
 import '../widgets/account_creation_prompt.dart';
+import '../widgets/personalization_dialog.dart';
+import '../widgets/social_login_button.dart';
+import '../widgets/terms_and_conditions_checkbox.dart';
 
 /// Create Account screen (UI Only)
 class CreateAccountScreen extends StatefulWidget {

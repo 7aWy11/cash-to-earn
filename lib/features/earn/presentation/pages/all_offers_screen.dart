@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../core/config/router/route_names.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
-import '../../../../core/config/router/route_names.dart';
 import '../../../../core/widgets/custom_section _header.dart';
-import '../widgets/trending_offers_list.dart';
 import '../../data/models/trending_offer.dart';
+import '../widgets/trending_offers_list.dart';
 
 class AllOffersScreen extends StatelessWidget {
   const AllOffersScreen({super.key});

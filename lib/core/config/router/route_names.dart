@@ -43,6 +43,10 @@ class RouteNames {
   static const String allTopGames = '/all-top-games';
   static const String allInAppTasks = '/all-in-app-tasks';
 
+  // Task Details
+  static const String tasksList = '/tasks-list';
+  static const String taskDetails = '/task-details';
+
   // Support
   static const String support = '/support';
   static const String privacyPolicy = '/privacy-policy';

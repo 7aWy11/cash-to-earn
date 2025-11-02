@@ -1,4 +1,4 @@
-import 'package:cash_to_earn/core/widgets/custom_section%20_header.dart';
+import '../../../../core/widgets/custom_section%20_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
