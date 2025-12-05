@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import '../config/theme/app_colors.dart';
 import '../config/theme/app_text_styles.dart';
-import 'package:flutter/material.dart';
 
 class CustomLogoutDialog extends StatelessWidget {
   final VoidCallback? onLogout;
@@ -46,7 +48,7 @@ class CustomLogoutDialog extends StatelessWidget {
       ),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
           child: Text(
             'Cancel',
             style: TextStyle(color: AppColors.textSecondary),
@@ -54,7 +56,7 @@ class CustomLogoutDialog extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            context.pop();
             if (onLogout != null) {
               onLogout!();
             }

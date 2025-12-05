@@ -124,7 +124,7 @@ class _PersonalizationDialogState extends State<PersonalizationDialog> {
                             text: 'Finish',
                             onPressed: selectedCountry != null
                                 ? () {
-                                    Navigator.pop(context);
+                                    context.pop();
                                     context.push(RouteNames.usernameAvatar);
                                   }
                                 : null,

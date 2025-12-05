@@ -11,42 +11,40 @@ class AppException implements Exception {
 
 /// Exception thrown when server returns an error
 class ServerException extends AppException {
-  ServerException([String message = 'Server error occurred']) : super(message);
+  ServerException([super.message = 'Server error occurred']);
 }
 
 /// Exception thrown when there's a network error
 class NetworkException extends AppException {
-  NetworkException([String message = 'No internet connection'])
-    : super(message);
+  NetworkException([super.message = 'No internet connection']);
 }
 
 /// Exception thrown when cache operation fails
 class CacheException extends AppException {
-  CacheException([String message = 'Cache error occurred']) : super(message);
+  CacheException([super.message = 'Cache error occurred']);
 }
 
 /// Exception thrown when authentication fails
 class AuthenticationException extends AppException {
-  AuthenticationException([String message = 'Authentication failed'])
-    : super(message);
+  AuthenticationException([super.message = 'Authentication failed']);
 }
 
 /// Exception thrown when authorization fails
 class AuthorizationException extends AppException {
-  AuthorizationException([String message = 'Access denied']) : super(message);
+  AuthorizationException([super.message = 'Access denied']);
 }
 
 /// Exception thrown when data validation fails
 class ValidationException extends AppException {
-  ValidationException([String message = 'Validation failed']) : super(message);
+  ValidationException([super.message = 'Validation failed']);
 }
 
 /// Exception thrown when requested resource is not found
 class NotFoundException extends AppException {
-  NotFoundException([String message = 'Resource not found']) : super(message);
+  NotFoundException([super.message = 'Resource not found']);
 }
 
 /// Exception thrown when request times out
 class TimeoutException extends AppException {
-  TimeoutException([String message = 'Request timeout']) : super(message);
+  TimeoutException([super.message = 'Request timeout']);
 }

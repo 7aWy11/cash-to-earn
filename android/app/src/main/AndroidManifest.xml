@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internet permission for url_launcher and share_plus -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
         android:label="cash_to_earn"
         android:name="${applicationName}"
@@ -40,6 +43,28 @@
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
+        </intent>
+        
+        <!-- For share_plus package -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
+        
+        <!-- For WhatsApp -->
+        <package android:name="com.whatsapp" />
+        
+        <!-- For Telegram -->
+        <package android:name="org.telegram.messenger" />
+        
+        <!-- For url_launcher -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
         </intent>
     </queries>
 </manifest>

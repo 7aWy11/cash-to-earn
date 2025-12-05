@@ -54,9 +54,7 @@ class TrendingOffersList extends StatelessWidget {
           physics: physics,
           spacing: 12.h,
         ),
-        if (hasMoreOffers && showViewAllButton) ...[
-          SizedBox(height: 12.h),
-        ],
+        if (hasMoreOffers && showViewAllButton) ...[SizedBox(height: 12.h)],
       ],
     );
   }

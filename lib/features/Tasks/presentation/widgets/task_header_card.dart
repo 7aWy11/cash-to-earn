@@ -28,7 +28,7 @@ class TaskHeaderCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppConstants.defaultRadius.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.black.withOpacity(0.3),
+            color: AppColors.black.withValues(alpha: 0.3),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),

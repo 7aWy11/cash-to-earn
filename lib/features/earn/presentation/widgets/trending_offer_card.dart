@@ -9,15 +9,10 @@ import '../../data/models/trending_offer.dart';
 
 class TrendingOfferCard extends StatelessWidget {
   // Convert it to a model
- final TrendingOffer offer;
+  final TrendingOffer offer;
   final VoidCallback? onTap;
 
-  const TrendingOfferCard({   
-    required this.offer,
-    super.key,
-
-    this.onTap,
-  });
+  const TrendingOfferCard({required this.offer, super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {

@@ -1,0 +1,130 @@
+import '../domain/entities/leaderboard_user.dart';
+
+class MockLeaderboardData {
+  static const int currentUserRank = 15;
+
+  static List<LeaderboardUser> getUsers() {
+    return const [
+      LeaderboardUser(
+        id: '1',
+        username: 'TopEarner123',
+        rank: 1,
+        totalEarnings: 2547.50,
+        completedOffers: 342,
+        country: 'US',
+      ),
+      LeaderboardUser(
+        id: '2',
+        username: 'CashKing',
+        rank: 2,
+        totalEarnings: 2134.75,
+        completedOffers: 289,
+        country: 'UK',
+      ),
+      LeaderboardUser(
+        id: '3',
+        username: 'MoneyMaster',
+        rank: 3,
+        totalEarnings: 1876.20,
+        completedOffers: 245,
+        country: 'CA',
+      ),
+      LeaderboardUser(
+        id: '4',
+        username: 'EarnPro',
+        rank: 4,
+        totalEarnings: 1654.30,
+        completedOffers: 218,
+        country: 'AU',
+      ),
+      LeaderboardUser(
+        id: '5',
+        username: 'OfferHunter',
+        rank: 5,
+        totalEarnings: 1543.90,
+        completedOffers: 203,
+        country: 'US',
+      ),
+      LeaderboardUser(
+        id: '6',
+        username: 'CashChaser',
+        rank: 6,
+        totalEarnings: 1432.50,
+        completedOffers: 195,
+        country: 'DE',
+      ),
+      LeaderboardUser(
+        id: '7',
+        username: 'TaskMaster99',
+        rank: 7,
+        totalEarnings: 1321.80,
+        completedOffers: 187,
+        country: 'FR',
+      ),
+      LeaderboardUser(
+        id: '8',
+        username: 'QuickEarner',
+        rank: 8,
+        totalEarnings: 1245.60,
+        completedOffers: 176,
+        country: 'IT',
+      ),
+      LeaderboardUser(
+        id: '9',
+        username: 'OfferKing21',
+        rank: 9,
+        totalEarnings: 1189.30,
+        completedOffers: 168,
+        country: 'ES',
+      ),
+      LeaderboardUser(
+        id: '10',
+        username: 'RewardSeeker',
+        rank: 10,
+        totalEarnings: 1098.70,
+        completedOffers: 155,
+        country: 'NL',
+      ),
+      LeaderboardUser(
+        id: '11',
+        username: 'EarnExpert',
+        rank: 11,
+        totalEarnings: 1056.40,
+        completedOffers: 149,
+        country: 'SE',
+      ),
+      LeaderboardUser(
+        id: '12',
+        username: 'CashFlow88',
+        rank: 12,
+        totalEarnings: 987.20,
+        completedOffers: 142,
+        country: 'NO',
+      ),
+      LeaderboardUser(
+        id: '13',
+        username: 'MoneyHunter',
+        rank: 13,
+        totalEarnings: 934.80,
+        completedOffers: 136,
+        country: 'DK',
+      ),
+      LeaderboardUser(
+        id: '14',
+        username: 'OfferPro2024',
+        rank: 14,
+        totalEarnings: 892.50,
+        completedOffers: 128,
+        country: 'FI',
+      ),
+      LeaderboardUser(
+        id: '15',
+        username: 'TaskChampion',
+        rank: 15,
+        totalEarnings: 845.30,
+        completedOffers: 121,
+        country: 'PL',
+      ),
+    ];
+  }
+}

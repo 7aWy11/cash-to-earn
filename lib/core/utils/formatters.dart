@@ -118,6 +118,3 @@ class Formatters {
     return '${text.substring(0, maxLength)}$ellipsis';
   }
 }
-
-
-

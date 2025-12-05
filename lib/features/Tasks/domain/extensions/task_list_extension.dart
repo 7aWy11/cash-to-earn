@@ -1,5 +1,5 @@
 import '../../data/models/task_model.dart';
-import '../enums/task_filter_type.dart';
+import '../../presentation/enums/task_filter_type.dart';
 
 /// Extension methods for List<TaskModel>
 extension TaskListExtension on List<TaskModel> {

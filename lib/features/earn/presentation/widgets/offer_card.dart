@@ -50,7 +50,7 @@ class OfferCard extends StatelessWidget {
               ],
             ),
           ),
-          
+
           // Title
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.w),
@@ -61,9 +61,9 @@ class OfferCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          
+
           const Spacer(),
-          
+
           // Reward
           Container(
             width: double.infinity,
@@ -86,7 +86,3 @@ class OfferCard extends StatelessWidget {
     );
   }
 }
-
-
-
-

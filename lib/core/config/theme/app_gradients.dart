@@ -13,7 +13,10 @@ class AppGradients {
     end: Alignment.bottomRight,
   );
   static const LinearGradient glassHeader = LinearGradient(
-    colors: [AppColors.primaryPurpleSecondary, AppColors.primaryPurpleSecondary],
+    colors: [
+      AppColors.primaryPurpleSecondary,
+      AppColors.primaryPurpleSecondary,
+    ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

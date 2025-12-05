@@ -46,7 +46,10 @@ class GlassmorphismButton extends StatelessWidget {
     final effectiveBorderRadius = borderRadius ?? 30.r;
     final effectiveGradientColors =
         gradientColors ??
-        [AppColors.white.withOpacity(0.15), AppColors.white.withOpacity(0.05)];
+        [
+          AppColors.white.withValues(alpha: 0.15),
+          AppColors.white.withValues(alpha: 0.05),
+        ];
 
     Widget buttonChild = isLoading
         ? SizedBox(
@@ -91,7 +94,7 @@ class GlassmorphismButton extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(effectiveBorderRadius),
             border: Border.all(
-              color: borderColor ?? AppColors.white.withOpacity(0.2),
+              color: borderColor ?? AppColors.white.withValues(alpha: 0.2),
               width: borderWidth ?? 1.5,
             ),
           ),

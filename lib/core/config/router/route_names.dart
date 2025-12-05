@@ -8,6 +8,7 @@ class RouteNames {
 
   // Auth
   static const String landing = '/landing';
+  static const String login = '/login';
   static const String createAccount = '/create-account';
   static const String usernameAvatar = '/username-avatar';
 
@@ -36,6 +37,9 @@ class RouteNames {
   static const String referrals = '/main/profile/referrals';
   static const String rewards = '/main/profile/rewards';
   static const String leaderboard = '/main/profile/leaderboard';
+
+  // Referral
+  static const String referral = '/referral';
 
   // Offer Details
   static const String offerDetails = '/offer-details';

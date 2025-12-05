@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/widgets/cstom_empty_page.dart';
 import '../../data/mock/mock_tasks_data.dart';
 import '../../data/models/task_model.dart';
-import '../../domain/enums/task_filter_type.dart';
+import '../enums/task_filter_type.dart';
 import '../../domain/extensions/task_list_extension.dart';
 import '../widgets/task_filter_chips.dart';
 import '../widgets/tasks_list.dart';
@@ -42,7 +43,7 @@ class _TaskesScreenState extends State<TaskesScreen> {
         title: Text('Available Tasks', style: AppTextStyles.title),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
         ),
       ),
       body: Column(

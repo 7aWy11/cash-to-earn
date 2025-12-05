@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/config/theme/app_colors.dart';
 import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../domain/enums/task_filter_type.dart';
+import '../enums/task_filter_type.dart';
 
 /// Widget for displaying task filter chips
 class TaskFilterChips extends StatelessWidget {

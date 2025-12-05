@@ -57,22 +57,25 @@ extension ContextExtensions on BuildContext {
     FocusScope.of(this).unfocus();
   }
 
-  /// Push route
-  Future<T?> push<T>(Widget page) {
-    return Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => page));
-  }
+  // NOTE: Navigation methods are deprecated - Use GoRouter instead
+  // Use context.push(), context.pop(), context.go() from go_router package
 
-  /// Pop route
-  void pop<T>([T? result]) {
-    Navigator.of(this).pop(result);
-  }
+  // /// Push route - DEPRECATED: Use GoRouter context.push() instead
+  // Future<T?> push<T>(Widget page) {
+  //   return Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => page));
+  // }
 
-  /// Push replacement
-  Future<T?> pushReplacement<T>(Widget page) {
-    return Navigator.of(
-      this,
-    ).pushReplacement<T, dynamic>(MaterialPageRoute(builder: (_) => page));
-  }
+  // /// Pop route - DEPRECATED: Use GoRouter context.pop() instead
+  // void pop<T>([T? result]) {
+  //   Navigator.of(this).pop(result);
+  // }
+
+  // /// Push replacement - DEPRECATED: Use GoRouter context.pushReplacement() instead
+  // Future<T?> pushReplacement<T>(Widget page) {
+  //   return Navigator.of(
+  //     this,
+  //   ).pushReplacement<T, dynamic>(MaterialPageRoute(builder: (_) => page));
+  // }
 }
 
 /// Extension methods for String

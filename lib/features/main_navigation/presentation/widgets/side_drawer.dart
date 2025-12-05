@@ -8,6 +8,7 @@ import '../../../../core/config/theme/app_text_styles.dart';
 import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_icon_builder.dart';
+import '../../../../core/widgets/custom_logout_dialog.dart';
 
 /// Side drawer menu
 class SideDrawer extends StatelessWidget {
@@ -28,7 +29,7 @@ class SideDrawer extends StatelessWidget {
                   Text('CashToEarn', style: AppTextStyles.h4),
                   const Spacer(),
                   IconButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => context.pop(),
                     icon: const Icon(Icons.close, color: AppColors.textPrimary),
                   ),
                 ],
@@ -38,16 +39,21 @@ class SideDrawer extends StatelessWidget {
             Divider(color: AppColors.border, height: 1.h),
 
             // Menu Items
-            _buildMenuItem(context, 'Referrals', AppImages.linkIcon, null),
+            _buildMenuItem(context, 'Referral', AppImages.linkIcon, () {
+              context.pop();
+              context.push(RouteNames.referral);
+            }),
             _buildMenuItem(
               context,
               'Leaderboard',
               AppImages.leaderboardIcon,
-              null,
+              () {
+                context.pop();
+                context.push(RouteNames.leaderboard);
+              },
             ),
-            _buildMenuItem(context, 'Shortcut', AppImages.shortcutsIcon, null),
             _buildMenuItem(context, 'Reward', AppImages.myOffersIcon, () {
-              Navigator.pop(context);
+              context.pop();
               context.push(RouteNames.tasksList);
             }),
             _buildMenuItem(context, 'Support', AppImages.supportIcon, null),
@@ -60,7 +66,16 @@ class SideDrawer extends StatelessWidget {
               child: CustomButton(
                 borderRadius: BorderRadius.circular(16.r),
                 text: 'Logout',
-                onPressed: () {},
+                onPressed: () {
+                  // Show logout confirmation dialog
+                  CustomLogoutDialog.show(
+                    context,
+                    onLogout: () {
+                      // Handle actual logout logic here
+                      // For example: clear user data, navigate to login screen, etc.
+                    },
+                  );
+                },
                 backgroundColor: AppColors.primaryPurple,
                 textColor: AppColors.primaryPurpleSecondary,
                 width: double.infinity,

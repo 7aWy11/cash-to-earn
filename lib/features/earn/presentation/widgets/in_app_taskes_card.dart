@@ -25,7 +25,10 @@ class InAppTaskesCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF1C1C1E),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: Colors.white.withOpacity(0.08), width: 1),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.08),
+          width: 1,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +65,7 @@ class InAppTaskesCard extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 0.5,
-            color: Colors.white.withOpacity(0.08),
+            color: Colors.white.withValues(alpha: 0.08),
           ),
 
           // Text Content Section
@@ -90,7 +93,7 @@ class InAppTaskesCard extends StatelessWidget {
                   description,
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -119,7 +122,7 @@ class InAppTaskesCard extends StatelessWidget {
     return Center(
       child: Icon(
         Icons.task_alt_outlined,
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         size: 40.sp,
       ),
     );

@@ -25,7 +25,10 @@ class TopGameOfferCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF1C1C1E),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.white.withOpacity(0.1), width: 1),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.1),
+          width: 1,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +58,7 @@ class TopGameOfferCard extends StatelessWidget {
                     child: Center(
                       child: Icon(
                         Icons.games_outlined,
-                        color: Colors.white.withOpacity(0.3),
+                        color: Colors.white.withValues(alpha: 0.3),
                         size: 48.sp,
                       ),
                     ),
@@ -69,7 +72,7 @@ class TopGameOfferCard extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 1,
-            color: Colors.white.withOpacity(0.1),
+            color: Colors.white.withValues(alpha: 0.1),
           ),
 
           // Text Details Section
@@ -96,7 +99,7 @@ class TopGameOfferCard extends StatelessWidget {
                 Text(
                   'Game',
                   style: AppTextStyles.bodySmall.copyWith(
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                     fontSize: 13.sp,
                   ),
                 ),

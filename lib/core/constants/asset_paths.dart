@@ -13,7 +13,36 @@ class AppImages {
   /// Main background image
   static const String background = '$_imagesBase/Background.png';
 
+  /// invite friends illustration
+  static const String inviteFriends = '$_imagesBase/invite.jpg';
   // ===== Icons =====
+  /// Coin icon.
+  static const String coin = '$_iconsBase/coin.png';
+
+  /// pending icon.
+  static const String pending = '$_iconsBase/sandclock.png';
+
+  /// frinds icon.
+  static const String friends = '$_iconsBase/friend.png';
+
+  /// Gold medal icon.
+  static const String goldMedal = '$_iconsBase/gold.png';
+
+  /// Silver medal icon.
+  static const String silverMedal = '$_iconsBase/silver.png';
+
+  /// Bronze medal icon.
+  static const String bronzeMedal = '$_iconsBase/bronze.png';
+
+  /// Crown icon for first place
+  static const String crown = '$_iconsBase/crown.png';
+
+  ///Whatapp icon.
+  static const String whatsapp = '$_iconsBase/whatsapp_logo.png';
+
+  ///Telegram icon.
+  static const String telegram = '$_iconsBase/telegram_logo.png';
+
   /// Brand/App icon
   static const String brandIcon = '$_iconsBase/bran_icon.png';
 

@@ -44,7 +44,7 @@ class TaskListCard extends StatelessWidget {
           border: Border.all(color: AppColors.border),
           boxShadow: [
             BoxShadow(
-              color: AppColors.black.withOpacity(0.1),
+              color: AppColors.black.withValues(alpha: 0.1),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -60,7 +60,7 @@ class TaskListCard extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
-                    color: _getStatusColor().withOpacity(0.2),
+                    color: _getStatusColor().withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(6.r),
                   ),
                   child: Text(
@@ -109,10 +109,10 @@ class TaskListCard extends StatelessWidget {
                     vertical: 6.h,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.goldYellow.withOpacity(0.2),
+                    color: AppColors.goldYellow.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
-                      color: AppColors.goldYellow.withOpacity(0.5),
+                      color: AppColors.goldYellow.withValues(alpha: 0.5),
                     ),
                   ),
                   child: Row(

@@ -24,8 +24,6 @@ Future<void> init() async {
   // Cubit
   // sl.registerFactory(() => SplashCubit());
 
-  
-  
   // =========================================================================
   // Features - Auth
   // =========================================================================
@@ -113,6 +111,3 @@ Future<void> init() async {
   // Cubit
   // sl.registerFactory(() => NavigationCubit());
 }
-
-
-

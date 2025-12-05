@@ -29,7 +29,7 @@ class InstructionStepWidget extends StatelessWidget {
             width: 24.w,
             height: 24.w,
             decoration: BoxDecoration(
-              color: stepColor.withOpacity(0.2),
+              color: stepColor.withValues(alpha: 0.2),
               shape: BoxShape.circle,
               border: Border.all(color: stepColor),
             ),

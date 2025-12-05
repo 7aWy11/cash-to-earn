@@ -1,6 +1,9 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+
 import 'withdraw_dialog_header.dart';
 import 'withdraw_amount_step.dart';
 import 'withdraw_confirm_step.dart';
@@ -70,7 +73,7 @@ class _PaymentMethodDialogState extends State<PaymentMethodDialog> {
 
   void _completeWithdraw() {
     // Handle withdrawal completion
-    Navigator.of(context).pop();
+    context.pop();
   }
 
   @override
@@ -127,7 +130,7 @@ class _PaymentMethodDialogState extends State<PaymentMethodDialog> {
           fee: widget.fee,
           methodColor: widget.methodColor,
           amountController: _amountController,
-          onBack: () => Navigator.of(context).pop(),
+          onBack: () => context.pop(),
           onContinue: _nextStep,
           onAmountChanged: (value) {
             setState(() {
@@ -156,7 +159,7 @@ class _PaymentMethodDialogState extends State<PaymentMethodDialog> {
         );
       case 3:
         return WithdrawCompleteStep(
-          onClose: () => Navigator.of(context).pop(),
+          onClose: () => context.pop(),
           onComplete: _completeWithdraw,
         );
       default:
@@ -170,7 +173,7 @@ class _PaymentMethodDialogState extends State<PaymentMethodDialog> {
           fee: widget.fee,
           methodColor: widget.methodColor,
           amountController: _amountController,
-          onBack: () => Navigator.of(context).pop(),
+          onBack: () => context.pop(),
           onContinue: _nextStep,
           onAmountChanged: (value) {
             setState(() {

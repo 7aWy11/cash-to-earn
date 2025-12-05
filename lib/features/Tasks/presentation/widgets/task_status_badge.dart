@@ -69,7 +69,7 @@ class TaskStatusBadge extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
-        color: statusColor.withOpacity(0.2),
+        color: statusColor.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: statusColor),
       ),

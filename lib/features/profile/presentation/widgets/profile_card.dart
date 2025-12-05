@@ -34,10 +34,10 @@ class ProfileCard extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors.primaryPurpleSecondary.withOpacity(0.3),
+            color: AppColors.primaryPurpleSecondary.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
-              color: AppColors.border.withOpacity(0.5),
+              color: AppColors.border.withValues(alpha: 0.5),
               width: 1,
             ),
           ),
@@ -106,7 +106,10 @@ class ProfileCard extends StatelessWidget {
                 end: Alignment.bottomRight,
               )
             : null,
-        border: Border.all(color: Colors.white.withOpacity(0.1), width: 2),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.1),
+          width: 2,
+        ),
       ),
       child: ClipOval(
         child: avatarUrl != null

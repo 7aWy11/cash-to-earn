@@ -56,13 +56,13 @@ class LandingScreen extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            const Color(0xFF2D2D3A).withOpacity(0.6),
-                            const Color(0xFF1A1A24).withOpacity(0.6),
+                            const Color(0xFF2D2D3A).withValues(alpha: 0.6),
+                            const Color(0xFF1A1A24).withValues(alpha: 0.6),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(20.r),
                         border: Border.all(
-                          color: AppColors.white.withOpacity(0.1),
+                          color: AppColors.white.withValues(alpha: 0.1),
                           width: 1,
                         ),
                       ),
@@ -88,7 +88,7 @@ class LandingScreen extends StatelessWidget {
                           Text(
                             'AI-powered task matching finds you the highest paying opportunities',
                             style: AppTextStyles.bodyMedium.copyWith(
-                              color: AppColors.white.withOpacity(0.7),
+                              color: AppColors.white.withValues(alpha: 0.7),
                               height: 1.5,
                             ),
                           ),
@@ -130,7 +130,9 @@ class LandingScreen extends StatelessWidget {
                     SizedBox(height: 12.h),
                     GlassmorphismButton(
                       text: 'I Already Have an Account',
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(RouteNames.login);
+                      },
                       width: double.infinity,
                       textColor: AppColors.textPrimary,
                       borderRadius: 12.r,
